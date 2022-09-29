@@ -1,40 +1,40 @@
 public class U2L3Runner {
-    public static void main(String[] args) {
-        int length, width, height;
+    public static void main(String[] args)
+    {
+        Student student1 = new Student("Charles", "Smith", 2021);
+        student1.addTestScore(85.5);
+        student1.printStudentInfo();
+        System.out.println();
 
-        length = 5;
-        width = 10;
-        height = length;
+        student1.addTestScore(94.5);
+        student1.printStudentInfo();
+        System.out.println();
 
-        Box box1 = new Box(length, width, height);
-        Box box2 = new Box(length);
-        box1.printDimensions();
-        box2.printDimensions();
+        student1.addTestScore(100);
+        student1.printStudentInfo();
+        System.out.println();
 
-        String bigger;
+        student1.addTestScore(96);
+        student1.printStudentInfo();
+        System.out.println();
 
-        if (box1.volume() > box2.volume())
-        {
-            bigger = "box1 has greater volume";
-        }
-        else if (box1.volume() < box2.volume())
-        {
-            bigger = "box2 has greater volume";
-        }
-        else
-        {
-            bigger = "both boxes have equal volume";
-        }
+        Student student2 = new Student("Amy", "Adams", 2020);
+        student2.addTestScore(98.2);
+        student2.printStudentInfo();
+        System.out.println();
 
-        System.out.println(bigger);
+        student2.addTestScore(92.5);
+        student2.printStudentInfo();
+        System.out.println();
 
-        boolean box1sides = box1.anySideLongerThan(length);
-        boolean box2sides = box2.anySideLongerThan(length);
+        double student1avg = student1.averageTestScore();
+        double student2avg = student2.averageTestScore();
 
-        System.out.println("box1 has a side that exceeds " + length + ": " + box1sides);
-        System.out.println("box2 has a side that exceeds " + length + ": " + box2sides);
-
-
+        boolean student1greater = (student1avg > student2avg);
+        System.out.println(student1greater);
+        boolean student2greater = (student1avg < student2avg);
+        System.out.println(student2greater);
     }
+
 
 }
